@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+}
+
+body {
+	display: grid;
+	grid-template-areas:
+	"header header header button"
+	"content content content content";
+    gap: 10px;
+    grid-template-columns: repeat();
+}
+
+#modal {
+    width: 300px;
+    /* padding: 0; */
+}
+
+#modal-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+}
+
+#close-modal-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box label {
+    margin-bottom: 10px;
+}
+
+.input-radio {
+    margin-bottom: 10px;
+}
+
+.input-radio p {
+    margin-bottom: 10px;
+}
+
+.input-radio input {
+    cursor: pointer;
+}
+
+#submit-book-button {
+    cursor: pointer;
+}
+
+.header {
+	grid-area: header;
+	background-color: lightgrey;
+    padding: 30px;
+}
+
+.book-card {
+	border: black solid 1px;
+    padding: 20px;
+}
