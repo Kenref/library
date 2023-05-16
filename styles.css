@@ -2,13 +2,11 @@
     margin: 0;
 }
 
-body {
-	display: grid;
-	grid-template-areas:
-	"header header header button"
-	"content content content content";
-    gap: 10px;
-    grid-template-columns: repeat();
+.header {
+    display: flex;
+    justify-content: space-between;
+	background-color: lightgrey;
+    padding: 30px;
 }
 
 #modal {
@@ -36,33 +34,24 @@ body {
     flex-direction: column;
 }
 
-.input-box label {
+.input-box label, .input-radio, .input-radio p {
     margin-bottom: 10px;
 }
 
-.input-radio {
-    margin-bottom: 10px;
-}
-
-.input-radio p {
-    margin-bottom: 10px;
-}
-
-.input-radio input {
+.input-radio input, #submit-book-button {
     cursor: pointer;
-}
-
-#submit-book-button {
-    cursor: pointer;
-}
-
-.header {
-	grid-area: header;
-	background-color: lightgrey;
-    padding: 30px;
 }
 
 .book-card {
 	border: black solid 1px;
     padding: 20px;
+}
+
+.books-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    justify-items: space-around;
+    margin: 50px;
 }

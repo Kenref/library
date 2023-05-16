@@ -2,7 +2,8 @@ const modal = document.getElementById("modal");
 const openModal = document.getElementById("open-modal-button");
 const closeModal = document.getElementById("close-modal-button");
 const submitBookButton = document.getElementById("submit-book-button")
-
+const books = document.querySelectorAll(".book-card")
+const booksContainer = document.querySelector(".books-container")
 
 openModal.addEventListener("click", () => {
 	modal.showModal();
@@ -39,5 +40,17 @@ addBookToLibrary("book4", "author4", "300", "unread");
 // console.table(library);
 
 for (let i = 0; i < library.length; i++) {
-	console.log(i, library[i])
+	const bookCard = document.createElement("div")
+	bookCard.innerHTML = `
+	<h3>${library[i].title}</h3>
+	<p>Title: ${library[i].title}</P>
+	<p>Pages: ${library[i].pages}</p>
+	<p>Status: ${library[i].status}</p>
+	<button>Remove book</button>`;
+	booksContainer.appendChild(bookCard)
 }
+
+
+
+
+console.log(books)
