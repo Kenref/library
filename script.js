@@ -41,6 +41,7 @@ addBookToLibrary("book4", "author4", "300", "unread");
 
 for (let i = 0; i < library.length; i++) {
 	const bookCard = document.createElement("div")
+	bookCard.setAttribute("class", "book-card")
 	bookCard.innerHTML = `
 	<h3>${library[i].title}</h3>
 	<p>Title: ${library[i].title}</P>
@@ -53,4 +54,3 @@ for (let i = 0; i < library.length; i++) {
 
 
 
-console.log(books)
