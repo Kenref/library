@@ -21,21 +21,16 @@ closeModal.addEventListener("click", () => {
 	modal.close();
 });
 
-// removeButtons.addEventListener("click", () => {
-// 	// const index = library.indexOf(e)
-// 	console.log(removeButtons)
-// })
-
-// booksContainer.addEventListener("click", (e) => {
-// 	if (e.target.classList.contains("remove-button")) {
-// 		library
 
 
-		
-// 		e.target.parentNode.remove()
-	
-// 	}
-// })
+booksContainer.addEventListener("click", (e) => {
+	if (e.target.classList.contains("remove-button")) {
+		const bookCard = e.target.parentNode;
+		const index = Array.from(booksContainer.children).indexOf(bookCard)
+		library.splice(index, 1)
+		bookCard.remove()
+	}
+})
 
 
 
