@@ -2,8 +2,10 @@ const modal = document.getElementById("modal");
 const openModal = document.getElementById("open-modal-button");
 const closeModal = document.getElementById("close-modal-button");
 const submitBookButton = document.getElementById("submit-book-button")
-const booksContainer = document.querySelector(".books-container")
+let booksContainer = document.querySelector(".books-container")
+const removeButtons = document.querySelectorAll(".remove-button")
 // const books = document.querySelectorAll(".book-card")
+const documentBody = document.querySelector("body")
 
 const title = document.getElementById("title")
 const author = document.getElementById("author")
@@ -18,6 +20,23 @@ openModal.addEventListener("click", () => {
 closeModal.addEventListener("click", () => {
 	modal.close();
 });
+
+// removeButtons.addEventListener("click", () => {
+// 	// const index = library.indexOf(e)
+// 	console.log(removeButtons)
+// })
+
+// booksContainer.addEventListener("click", (e) => {
+// 	if (e.target.classList.contains("remove-button")) {
+// 		library
+
+
+		
+// 		e.target.parentNode.remove()
+	
+// 	}
+// })
+
 
 
 function getStatus(statuss) {
@@ -48,46 +67,34 @@ function addBookToLibrary(title, author, pages, status) {
 	library.push(new Book(title, author, pages, status));
 }
 
-addBookToLibrary("batman", "superman", "100", "unRead");
+addBookToLibrary("Harry Potter", "JK Rowling", "500", "Read");
 addBookToLibrary("Game of Thrones", "George RR Martin", "2000", "Read");
-addBookToLibrary("Lord of the Rings", "JRR Tolkien", "200", "read");
-addBookToLibrary("book4", "author4", "300", "unread");
-
-// console.table(library);
+addBookToLibrary("Lord of the Rings", "JRR Tolkien", "200", "Read");
+addBookToLibrary("Skulduggery Pleasant", "Derek Landy", "300", "Unread");
 
 
 
-for (let i = 0; i < library.length; i++) {
-	const bookCard = document.createElement("div")
-	bookCard.setAttribute("class", "book-card")
+function populatePage() {
+	booksContainer.innerHTML = ""
+	for (let i = 0; i < library.length; i++) {
+	const bookCard = document.createElement("div");
+	bookCard.setAttribute("class", "book-card");
 	bookCard.innerHTML = `
 	<h3>${library[i].title}</h3>
 	<p>Title: ${library[i].title}</P>
 	<p>Pages: ${library[i].pages}</p>
 	<p>Status: ${library[i].status}</p>
-	<button>Remove book</button>`;
-	booksContainer.appendChild(bookCard)
-}	
-
-function newItems() {
-	const bookCard = document.createElement("div");
-	bookCard.setAttribute("class", "book-card");
-	bookCard.innerHTML = `
-	<h3>${library[library.length - 1].title}</h3>
-	<p>Title: ${library[library.length - 1].title}</P>
-	<p>Pages: ${library[library.length - 1].pages}</p>
-	<p>Status: ${library[library.length - 1].status}</p>
-	<button>Remove book</button>`;
+	<button class="remove-button">Remove book</button>`;
 	booksContainer.appendChild(bookCard);
+	}
 }
 
-	
+populatePage()
 
 
 submitBookButton.addEventListener("click", () => {
 	addBookToLibrary(title.value, author.value, pages.value, getStatus(readingStatus))
-	console.log(library)
-	newItems()
+	populatePage()
 })
 
 
