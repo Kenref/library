@@ -19,17 +19,16 @@ closeModal.addEventListener("click", () => {
 	modal.close();
 });
 
-// submitBookButton.addEventListener("click", () => {
-// 	modal.close();
-// })
 
 function getStatus(statuss) {
 	for (let i = 0; i < statuss.length; i++) {
 		if (statuss[i].checked) {
 			return "Read";
 		}
+		else {
+			return "Unread"
+		}
 	}
-	return "Unread";
 }
 
 
@@ -56,6 +55,8 @@ addBookToLibrary("book4", "author4", "300", "unread");
 
 // console.table(library);
 
+
+
 for (let i = 0; i < library.length; i++) {
 	const bookCard = document.createElement("div")
 	bookCard.setAttribute("class", "book-card")
@@ -66,12 +67,27 @@ for (let i = 0; i < library.length; i++) {
 	<p>Status: ${library[i].status}</p>
 	<button>Remove book</button>`;
 	booksContainer.appendChild(bookCard)
+}	
+
+function newItems() {
+	const bookCard = document.createElement("div");
+	bookCard.setAttribute("class", "book-card");
+	bookCard.innerHTML = `
+	<h3>${library[library.length - 1].title}</h3>
+	<p>Title: ${library[library.length - 1].title}</P>
+	<p>Pages: ${library[library.length - 1].pages}</p>
+	<p>Status: ${library[library.length - 1].status}</p>
+	<button>Remove book</button>`;
+	booksContainer.appendChild(bookCard);
 }
+
+	
 
 
 submitBookButton.addEventListener("click", () => {
-	library.push(new Book(title.value, author.value, pages.value, getStatus(readingStatus)))
+	addBookToLibrary(title.value, author.value, pages.value, getStatus(readingStatus))
 	console.log(library)
+	newItems()
 })
 
 
