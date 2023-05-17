@@ -12,6 +12,10 @@
 #modal {
     width: 300px;
     /* padding: 0; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
 }
 
 #modal-header {
@@ -26,7 +30,10 @@
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
+}
 
+#modal::backdrop {
+    background-color: rgba(128, 128, 128, 0.5);
 }
 
 .input-box {
@@ -55,3 +62,5 @@
     justify-items: space-around;
     margin: 50px;
 }
+
+
