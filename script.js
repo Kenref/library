@@ -22,7 +22,7 @@ closeModal.addEventListener("click", () => {
 });
 
 
-
+//removing books
 booksContainer.addEventListener("click", (e) => {
 	if (e.target.classList.contains("remove-button")) {
 		const bookCard = e.target.parentNode;
@@ -31,6 +31,20 @@ booksContainer.addEventListener("click", (e) => {
 		bookCard.remove()
 	}
 })
+
+booksContainer.addEventListener("click", (e) => {
+	if (e.target.classList.contains("toggle-read")) {
+		let status = e.target.parentNode.children[3]
+		if (status.innerHTML == "Status: Unread") {
+			status.innerHTML = "Status: Read"
+		}
+		else {
+			status.innerHTML = "Status: Unread"
+		}
+	}
+})
+
+
 
 
 
@@ -79,6 +93,7 @@ function populatePage() {
 	<p>Title: ${library[i].title}</P>
 	<p>Pages: ${library[i].pages}</p>
 	<p>Status: ${library[i].status}</p>
+	<button class="toggle-read">Read</button>
 	<button class="remove-button">Remove book</button>`;
 	booksContainer.appendChild(bookCard);
 	}
