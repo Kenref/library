@@ -25,25 +25,29 @@ closeModal.addEventListener("click", () => {
 //removing books
 booksContainer.addEventListener("click", (e) => {
 	if (e.target.classList.contains("remove-button")) {
-		const bookCard = e.target.parentNode;
+		const bookCard = e.target.parentNode.parentNode;
 		const index = Array.from(booksContainer.children).indexOf(bookCard)
 		library.splice(index, 1)
 		bookCard.remove()
 	}
 })
 
+// Toggle read
 booksContainer.addEventListener("click", (e) => {
-	if (e.target.classList.contains("toggle-read")) {
-		let status = e.target.parentNode.children[3]
-		if (status.innerHTML == "Status: Unread") {
-			status.innerHTML = "Status: Read"
-		}
-		else {
-			status.innerHTML = "Status: Unread"
-		}
-	}
-})
-
+  if (e.target.classList.contains("toggle-read")) {
+    let status = e.target.parentNode.parentNode.querySelector(".read-status");
+    let bookCard = e.target.parentNode.parentNode;
+    let index = Array.from(booksContainer.children).indexOf(bookCard);
+    
+    if (status.innerHTML === "Status: Unread") {
+      status.innerHTML = "Status: Read";
+      library[index].status = "Read";
+    } else {
+      status.innerHTML = "Status: Unread";
+      library[index].status = "Unread";
+    }
+  }
+});
 
 
 
@@ -88,13 +92,16 @@ function populatePage() {
 	for (let i = 0; i < library.length; i++) {
 	const bookCard = document.createElement("div");
 	bookCard.setAttribute("class", "book-card");
-	bookCard.innerHTML = `
+		bookCard.innerHTML = 
+	`<div class="top-card">
 	<h3>${library[i].title}</h3>
 	<p>Title: ${library[i].title}</P>
 	<p>Pages: ${library[i].pages}</p>
-	<p>Status: ${library[i].status}</p>
+	<p class="read-status">Status: ${library[i].status}</p>
+	</div>
+	<div class="bottom-card">
 	<button class="toggle-read">Read</button>
-	<button class="remove-button">Remove book</button>`;
+	<button class="remove-button">Remove book</button></div>`;
 	booksContainer.appendChild(bookCard);
 	}
 }

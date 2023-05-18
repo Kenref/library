@@ -1,44 +1,84 @@
+:root {
+    --header-colour: #a0a1e4;
+    --body-colour: #FAE7D5;
+    --button-colour: #FAE7D5;
+    --font-colour: #000a56;
+}
+
 * {
     margin: 0;
+    color: var(--font-colour);
+}
+
+body {
+    background-color: var(--body-colour);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-	background-color: lightgrey;
     padding: 30px;
+    background-color: var(--header-colour);
+
+}
+
+.header h1 {
+    font-size: 40px;
+} 
+
+
+button {
+    border: none;
+    color: var(--font-colour);
+    border-radius: 10px;
+    background-color: var(--button-colour);
+    font-weight: bold;
+    padding: 12px;
+    width: 120px;
 }
 
 #modal {
-    width: 300px;
+    width: 400px;
+    height: 400px;
     /* padding: 0; */
-    position: fixed;
+    /* position: fixed; */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    background-color: var(--body-colour);
+    border-radius: 10px;
 }
 
 #modal-header {
     display: flex;
     justify-content: space-between;
     border-bottom: 3px solid black;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 #close-modal-button {
     background: none;
-    border: none;
+    border: solid 2px var(--font-colour);
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
+    margin-bottom: 10px;
+    background-color: var(--header-colour);
 }
 
 #modal::backdrop {
     background-color: rgba(128, 128, 128, 0.5);
 }
 
+label, .input-radio p {
+    font-weight: bold;
+}
+
 .input-box {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .input-box label, .input-radio, .input-radio p {
@@ -49,9 +89,31 @@
     cursor: pointer;
 }
 
+.input-radio label{
+    margin-right: 10px;
+}
+
 .book-card {
 	border: black solid 1px;
     padding: 20px;
+    background-color: var(--header-colour);
+    border-radius: 10px;
+    box-shadow: -7px -5px 5px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-card button {
+
+    margin-right: 5px;
+}
+
+.book-card h3, .book-card p {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--body-colour);
 }
 
 .books-container {
@@ -60,9 +122,11 @@
     gap: 50px;
     justify-items: space-around;
     margin: 50px;
+
 }
 
-
-.remove-button {
-    /* border: solid red 1px; */
+#submit-book-button {
+    background-color: var(--header-colour);
+    width: 100%;
+    margin-top: 20px;
 }
