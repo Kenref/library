@@ -90,8 +90,7 @@ function populatePage() {
 	const bookCard = document.createElement("div");
 	bookCard.setAttribute("class", "book-card");
 		bookCard.innerHTML = 
-	`
-	<h3>${library[i].title}</h3>
+	`<h3>${library[i].title}</h3>
 	<p>Title: ${library[i].title}</P>
 	<p>Pages: ${library[i].pages}</p>
 	<p>Status: ${library[i].status}</p>
@@ -115,7 +114,7 @@ submitBookButton.addEventListener("click", () => {
 
 
 
-
+// change it so that the button changes text to unread when clicked and remove the status line from cards
 
 
 

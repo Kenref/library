@@ -24,6 +24,7 @@ body {
 
 .header h1 {
     font-size: 40px;
+    color: var(--body-colour);
 } 
 
 
@@ -36,6 +37,12 @@ button {
     padding: 12px;
     width: 120px;
 }
+
+button:hover {
+    transform: scaleY(1.1);
+}
+
+
 
 #modal {
     width: 400px;
@@ -123,6 +130,10 @@ label, .input-radio p {
     justify-items: space-around;
     margin: 50px;
 
+}
+
+.toggle-read, .remove-button {
+    width: 100%;
 }
 
 #submit-book-button {
