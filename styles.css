@@ -1,143 +1,143 @@
 :root {
-    --header-colour: #a0a1e4;
-    --body-colour: #FAE7D5;
-    --button-colour: #FAE7D5;
-    --font-colour: #000a56;
+	--header-colour: #a0a1e4;
+	--body-colour: #fae7d5;
+	--button-colour: #fae7d5;
+	--font-colour: #000a56;
 }
 
 * {
-    margin: 0;
-    color: var(--font-colour);
+	margin: 0;
+	color: var(--font-colour);
 }
 
 body {
-    background-color: var(--body-colour);
+	background-color: var(--body-colour);
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    background-color: var(--header-colour);
-
+	display: flex;
+	justify-content: space-between;
+	padding: 30px;
+	background-color: var(--header-colour);
 }
 
 .header h1 {
-    font-size: 40px;
-    color: var(--body-colour);
-} 
-
+	font-size: 40px;
+	color: var(--body-colour);
+}
 
 button {
-    border: none;
-    color: var(--font-colour);
-    border-radius: 10px;
-    background-color: var(--button-colour);
-    font-weight: bold;
-    padding: 12px;
-    width: 120px;
+	border: none;
+	color: var(--font-colour);
+	border-radius: 10px;
+	background-color: var(--button-colour);
+	font-weight: bold;
+	padding: 12px;
+	width: 120px;
 }
 
 button:hover {
-    transform: scaleY(1.1);
+	transform: scaleY(1.1);
 }
 
-
-
 #modal {
-    width: 400px;
-    height: 400px;
-    /* padding: 0; */
-    /* position: fixed; */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--body-colour);
-    border-radius: 10px;
+	width: 400px;
+	height: 400px;
+	/* padding: 0; */
+	/* position: fixed; */
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--body-colour);
+	border-radius: 10px;
 }
 
 #modal-header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 3px solid black;
-    margin-bottom: 20px;
-    align-items: center;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 3px solid black;
+	margin-bottom: 20px;
+	align-items: center;
 }
 
 #close-modal-button {
-    background: none;
-    border: solid 2px var(--font-colour);
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 10px;
-    background-color: var(--header-colour);
+	background: none;
+	border: solid 2px var(--font-colour);
+	font-size: 1.5rem;
+	font-weight: bold;
+	cursor: pointer;
+	margin-bottom: 10px;
+	background-color: var(--header-colour);
 }
 
 #modal::backdrop {
-    background-color: rgba(128, 128, 128, 0.5);
+	background-color: rgba(128, 128, 128, 0.5);
 }
 
-label, .input-radio p {
-    font-weight: bold;
+label,
+.input-radio p {
+	font-weight: bold;
 }
 
 .input-box {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
 }
 
-.input-box label, .input-radio, .input-radio p {
-    margin-bottom: 10px;
+.input-box label,
+.input-radio,
+.input-radio p {
+	margin-bottom: 10px;
 }
 
-.input-radio input, #submit-book-button {
-    cursor: pointer;
+.input-radio input,
+#submit-book-button {
+	cursor: pointer;
 }
 
-.input-radio label{
-    margin-right: 10px;
+.input-radio label {
+	margin-right: 10px;
 }
 
 .book-card {
 	border: black solid 1px;
-    padding: 20px;
-    background-color: var(--header-colour);
-    border-radius: 10px;
-    box-shadow: -7px -5px 5px;
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	padding: 20px;
+	background-color: var(--header-colour);
+	border-radius: 10px;
+	box-shadow: -7px -5px 5px;
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .bottom-card button {
-
-    margin-right: 5px;
+	margin-right: 5px;
 }
 
-.book-card h3, .book-card p {
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: var(--body-colour);
+.book-card h3,
+.book-card p {
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: var(--body-colour);
 }
 
 .books-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 50px;
-    justify-items: space-around;
-    margin: 50px;
-
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 50px;
+	justify-items: space-around;
+	margin: 50px;
 }
 
-.toggle-read, .remove-button {
-    width: 100%;
+.toggle-read,
+.remove-button {
+	width: 100%;
 }
 
 #submit-book-button {
-    background-color: var(--header-colour);
-    width: 100%;
-    margin-top: 20px;
+	background-color: var(--header-colour);
+	width: 100%;
+	margin-top: 20px;
 }
