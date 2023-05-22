@@ -4,7 +4,6 @@ const closeModal = document.getElementById("close-modal-button");
 const submitBookButton = document.getElementById("submit-book-button")
 let booksContainer = document.querySelector(".books-container")
 const removeButtons = document.querySelectorAll(".remove-button")
-// const books = document.querySelectorAll(".book-card")
 const documentBody = document.querySelector("body")
 
 const title = document.getElementById("title")
@@ -36,15 +35,14 @@ booksContainer.addEventListener("click", (e) => {
 booksContainer.addEventListener("click", (e) => {
 	if (e.target.classList.contains("toggle-read")) {
 		let status = e.target.parentNode.children[3]
-		if (status.innerHTML == "Status: Unread") {
-			status.innerHTML = "Status: Read"
+		if (status.innerHTML == "Unread") {
+			status.innerHTML = "Read"
 		}
 		else {
-			status.innerHTML = "Status: Unread"
+			status.innerHTML = "Unread"
 		}
 	}
 })
-
 
 
 
@@ -73,6 +71,7 @@ function Book(title, author, pages, status) {
 	this.status = status;
 }
 
+
 function addBookToLibrary(title, author, pages, status) {
 	library.push(new Book(title, author, pages, status));
 }
@@ -81,7 +80,6 @@ addBookToLibrary("Harry Potter", "JK Rowling", "500", "Read");
 addBookToLibrary("Game of Thrones", "George RR Martin", "2000", "Read");
 addBookToLibrary("Lord of the Rings", "JRR Tolkien", "200", "Read");
 addBookToLibrary("Skulduggery Pleasant", "Derek Landy", "300", "Unread");
-
 
 
 function populatePage() {
@@ -93,7 +91,6 @@ function populatePage() {
 	`<h3>${library[i].title}</h3>
 	<p>Title: ${library[i].title}</P>
 	<p>Pages: ${library[i].pages}</p>
-	<p>Status: ${library[i].status}</p>
 	<button class="toggle-read">Read</button>
 	<button class="remove-button">Remove book</button>`;
 	booksContainer.appendChild(bookCard);
@@ -114,26 +111,8 @@ submitBookButton.addEventListener("click", () => {
 
 
 
-// change it so that the button changes text to unread when clicked and remove the status line from cards
 
 
 
 
 
-
-
-
-
-
-// To make it so that the modal will close if you click outside of it
-// modal.addEventListener("click", e => {
-// 	const dialogDimensions = modal.getBoundingClientRect()
-// 	if (
-// 		e.client < dialogDimensions.left ||
-// 		e.client > dialogDimensions.right ||
-// 		e.clientY < dialogDimensions.top ||
-// 		e.clientY > dialogDimensions.bottom
-// 	) {
-// 		modal.close()
-// 	}
-// })
